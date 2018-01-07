@@ -22,10 +22,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
 <link rel="import" href="my-icons.html">
 
+
 <link rel="lazy-import" href="my-view1.html">
 <link rel="lazy-import" href="my-view2.html">
 <link rel="lazy-import" href="my-view3.html">
 <link rel="lazy-import" href="my-view404.html">
+
+
 
 <dom-module id="my-app">
   <template>
@@ -65,8 +68,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       .drawer-list a.iron-selected {
         color: black;
         font-weight: bold;
-      }
+      }  
     </style>
+
+  
 
     <app-location
         route="{{route}}"
@@ -80,6 +85,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         tail="{{subroute}}">
     </app-route>
 
+    <!-- set 'force-narrow' to hide the drawer -->
     <app-drawer-layout fullbleed force-narrow>
       <!-- Drawer content -->
       <app-drawer id="drawer" slot="drawer">
@@ -96,10 +102,13 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
         <app-header slot="header" condenses reveals effects="waterfall">
           <app-toolbar>
+           
             <paper-icon-button icon="my-icons:menu" drawer-toggle></paper-icon-button>
-            <div main-title>My App</div>
+          
+            <div main-title>Polymer+Grid</div>
           </app-toolbar>
         </app-header>
+    
 
         <iron-pages
             selected="[[page]]"
@@ -114,6 +123,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       </app-header-layout>
     </app-drawer-layout>
   </template>
+
 
   <script>
     class MyApp extends Polymer.Element {
@@ -131,6 +141,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
           // This shouldn't be neccessary, but the Analyzer isn't picking up
           // Polymer.Element#rootPath
           rootPath: String,
+
         };
       }
 
